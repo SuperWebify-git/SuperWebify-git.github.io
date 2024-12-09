@@ -3,51 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperWebify - Premium Website Templates Marketplace</title>
+    <title>SuperWebify - Elite Web Template Marketplace</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
+    <!-- Fontawesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Premium CSS -->
     <style>
         :root {
-            --primary-blue: #3498db;
-            --secondary-green: #2ecc71;
-            --accent-red: #e74c3c;
-            --light-gray: #f8f9fa;
-            --dark-background: #121212;
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --dark-bg: #121212;
+            --light-bg: #f4f6f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         body {
-            font-family: 'Roboto', 'Inter', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
         }
 
-        body.dark-mode {
-            background-color: var(--dark-background);
-            color: #f4f4f4;
+        /* Premium Glassmorphism Effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         }
 
+        /* Advanced Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 100px 0;
-            text-align: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Animated Background Shapes */
+        .bg-shape {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-30px); }
+        }
+
+        /* Template Grid with Advanced Hover */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .template-card {
-            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: all 0.4s ease-in-out;
         }
 
         .template-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .template-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: 0.5s ease;
+        }
+
+        .template-card:hover .template-overlay {
+            height: 100%;
+        }
+
+        /* Advanced Pricing Tiers */
+        .pricing-tier {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .pricing-tier:hover {
+            transform: translateY(-15px);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: #f4f4f4;
+        }
+
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 80vh;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-card">
         <div class="container">
             <a class="navbar-brand" href="#">SuperWebify</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -55,77 +143,78 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#templates">Templates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#templates">Templates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="themeToggle" class="btn btn-outline-primary">
-                            🌓 Toggle Theme
+                        <button id="themeToggle" class="btn btn-outline-light">
+                            <i class="fas fa-adjust"></i> Theme
                         </button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="btn btn-primary ms-2">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Animated Background -->
     <header class="hero-section">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Elevate Your Web Presence</h1>
-            <p class="lead">Premium Website Templates for Entrepreneurs and Developers</p>
-            <div class="mt-4">
-                <a href="#templates" class="btn btn-light btn-lg me-2">Browse Templates</a>
-                <a href="#signup" class="btn btn-success btn-lg">Start Free Trial</a>
+        <!-- Animated Background Shapes -->
+        <div class="bg-shape" style="top: 10%; left: 10%; width: 200px; height: 200px;"></div>
+        <div class="bg-shape" style="bottom: 20%; right: 15%; width: 150px; height: 150px;"></div>
+
+        <div class="container hero-content text-center">
+            <h1 class="display-3 fw-bold mb-4">Transform Your Digital Presence</h1>
+            <p class="lead mb-5">Professional Website Templates for Innovators & Entrepreneurs</p>
+            <div class="d-flex justify-content-center">
+                <a href="#templates" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-swatchbook me-2"></i>Browse Templates
+                </a>
+                <a href="#" class="btn btn-success btn-lg">
+                    <i class="fas fa-rocket me-2"></i>Get Started
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Featured Templates -->
+    <!-- Featured Templates Section -->
     <section id="templates" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Featured Templates</h2>
-            <div class="row">
-                <!-- Template Cards with Hover Effects -->
-                <div class="col-md-4 mb-4">
-                    <div class="card template-card">
-                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Template 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Startup Landing</h5>
-                            <p class="card-text">Clean, modern design for tech startups</p>
-                            <div class="d-flex justify-content-between">
-                                <span class="badge bg-primary">Business</span>
-                                <a href="#" class="btn btn-sm btn-outline-secondary">Quick View</a>
-                            </div>
+            <h2 class="text-center mb-5">Featured Templates</h2>
+            <div class="template-grid">
+                <!-- Template Cards with Advanced Hover -->
+                <div class="template-card position-relative">
+                    <img src="/api/placeholder/400/300" class="img-fluid" alt="Template">
+                    <div class="template-overlay d-flex flex-column justify-content-end p-3 text-white">
+                        <h4>Startup Landing</h4>
+                        <p>Modern Tech Startup Template</p>
+                        <div class="d-flex justify-content-between">
+                            <span class="badge bg-primary">Business</span>
+                            <a href="#" class="btn btn-sm btn-light">Preview</a>
                         </div>
                     </div>
                 </div>
-                <!-- Repeat similar card structure for other templates -->
+                <!-- Repeat for multiple templates -->
             </div>
         </div>
     </section>
 
-    <!-- Price Categories -->
+    <!-- Pricing Section -->
     <section id="pricing" class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Our Pricing</h2>
+            <h2 class="text-center mb-5">Flexible Pricing</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <h3 class="card-title">Basic</h3>
-                            <p class="h4">$9.99</p>
-                            <ul class="list-unstyled mt-3">
-                                <li>1 Template</li>
-                                <li>Basic Support</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary">Select Plan</a>
-                        </div>
+                <div class="col-md-4 mb-4">
+                    <div class="pricing-tier text-center">
+                        <h3>Starter</h3>
+                        <p class="h2 text-primary mb-4">$9.99</p>
+                        <ul class="list-unstyled">
+                            <li>3 Website Templates</li>
+                            <li>Basic Support</li>
+                            <li>Future Updates</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary mt-3">Choose Plan</a>
                     </div>
                 </div>
                 <!-- More pricing tiers -->
@@ -133,34 +222,18 @@
         </div>
     </section>
 
-    <!-- Testimonial Carousel -->
-    <section class="py-5">
+    <!-- Newsletter & CTA -->
+    <section class="bg-dark text-white py-5">
         <div class="container">
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active text-center">
-                        <blockquote class="blockquote">
-                            <p>"SuperWebify transformed my startup's online presence!"</p>
-                            <footer class="blockquote-footer">Jane Doe, CEO of TechInnovate</footer>
-                        </blockquote>
-                    </div>
-                    <!-- More testimonial slides -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3>Stay Updated with Latest Templates</h3>
+                    <p>Get exclusive design insights and template previews</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="bg-primary text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <h3 class="text-center mb-4">Stay Updated</h3>
-                    <form id="newsletterForm">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                            <button class="btn btn-success" type="submit">Subscribe</button>
-                        </div>
+                <div class="col-md-6">
+                    <form id="newsletterForm" class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
             </div>
@@ -170,28 +243,40 @@
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
+            <div class="social-links mb-3">
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+            </div>
             <p>&copy; 2024 SuperWebify. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS and Dependencies -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JavaScript -->
     <script>
-        // Dark/Light Mode Toggle
+        // Dark Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
+            
+            // Optional: Store user preference
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
         });
 
-        // Newsletter Form Submission
-        const newsletterForm = document.getElementById('newsletterForm');
-        newsletterForm.addEventListener('submit', (e) => {
+        // Check for previous theme preference
+        const savedTheme = localStorage.getItem('darkMode');
+        if (savedTheme === 'true') {
+            body.classList.add('dark-mode');
+        }
+
+        // Newsletter Subscription
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you for subscribing!');
+            alert('Thanks for subscribing to SuperWebify!');
         });
     </script>
 </body>
