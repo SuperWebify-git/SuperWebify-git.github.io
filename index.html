@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperWebify - Premium Website Templates Marketplace</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Custom CSS -->
+    <style>
+        /* Custom styles for the landing page */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .hero {
+            background-image: url('hero-background.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+        }
+        .testimonial-carousel p {
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Hero Section -->
-    <header class="hero bg-primary text-white text-center py-5">
+    <header class="hero">
         <div class="container">
-            <h1 class="display-4">Elevate Your Online Presence</h1>
-            <p class="lead">Discover stunning website templates designed for entrepreneurs, startups, and small businesses.</p>
+            <h1 class="display-4">Elevate Your Online Presence with Stunning Templates</h1>
+            <p class="lead">Discover high-quality website templates designed for entrepreneurs, startups, and small businesses.</p>
             <a href="#template-catalog" class="btn btn-light btn-lg">Shop Now</a>
         </div>
     </header>
@@ -29,12 +54,34 @@
                         <img src="template1.jpg" class="card-img-top" alt="Template 1">
                         <div class="card-body">
                             <h5 class="card-title">Template Name 1</h5>
-                            <p class="card-text">$49.99</p>
+                            <p class="card-text">A modern and responsive template perfect for any business.</p>
+                            <p class="card-text"><strong>$49.99</strong></p>
                             <a href="template-details.html" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>
-                <!-- Repeat for more templates -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="template2.jpg" class="card-img-top" alt="Template 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Template Name 2</h5>
+                            <p class="card-text">A sleek and professional template for startups.</p>
+                            <p class="card-text"><strong>$59.99</strong></p>
+                            <a href="template-details.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="template3.jpg" class="card-img-top" alt="Template 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Template Name 3</h5>
+                            <p class="card-text">An elegant template designed for creative professionals.</p>
+                            <p class="card-text"><strong>$39.99</strong></p>
+                            <a href="template-details.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -55,7 +102,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-body text-center">
+                        < div class="card-body text-center">
                             <h5 class="card-title">Pro</h5>
                             <p class="card-text">$39.99</p>
                             <a href="#" class="btn btn-primary">Buy Now</a>
@@ -96,7 +143,7 @@
                     <div class="carousel-item active">
                         <p class="text-center">"SuperWebify has transformed my business!" - Jane D.</p>
                     </div>
-                    <div class ="carousel-item">
+                    <div class="carousel-item">
                         <p class="text-center">"The templates are stunning and easy to use!" - John S.</p>
                     </div>
                     <div class="carousel-item">
