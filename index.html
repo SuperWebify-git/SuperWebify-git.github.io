@@ -7,287 +7,278 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS for Premium Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <style>
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f9fc;
+            background-color: #f9fafc;
             color: #333;
-            line-height: 1.6;
             overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: white;
+            padding: 120px 20px;
             text-align: center;
-            padding: 140px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://via.placeholder.com/1500x800') center/cover no-repeat;
-            opacity: 0.2;
-            z-index: 0;
         }
         .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 800;
-            text-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 3.5rem;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
         .hero p {
-            font-size: 1.5rem;
-            margin: 20px 0;
-            text-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 1.3rem;
+            margin-top: 10px;
         }
-        .hero .btn {
-            padding: 15px 40px;
-            font-size: 1.2rem;
+        .hero .btn-primary {
+            margin: 20px 10px 0;
+            padding: 12px 30px;
             border-radius: 50px;
-            border: 2px solid transparent;
-            background-color: transparent;
-            color: white;
-            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+            transition: all 0.3s ease;
         }
-        .hero .btn:hover {
-            transform: scale(1.1);
-            background-color: #00f2fe;
-            border-color: #00f2fe;
-            color: #121212;
-        }
-
-        /* Templates Section */
-        .templates {
-            padding: 80px 20px;
-            background-color: #fff;
-            position: relative;
-        }
-        .templates h2 {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 50px;
-            color: #333;
-            font-weight: 700;
-        }
-        .template-card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .template-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        .template-card img {
-            border-bottom: 5px solid #00f2fe;
-            transition: transform 0.3s;
-        }
-        .template-card img:hover {
+        .hero .btn-primary:hover {
+            background: white;
+            color: #2575fc;
             transform: scale(1.05);
         }
-        .template-card .card-body {
-            padding: 20px;
-            text-align: center;
-        }
-        .template-card h5 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-        .template-card p {
-            font-size: 1rem;
-            color: #777;
-        }
 
-        /* Value Section */
-        .value-section {
-            background: #121212;
-            color: white;
+        /* Features Section */
+        .features {
             padding: 80px 20px;
             text-align: center;
         }
-        .value-section h3 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            font-weight: 700;
-            color: #fff;
+        .features h2 {
+            margin-bottom: 40px;
         }
-        .value-section p {
-            font-size: 1.2rem;
-            color: #bbb;
+        .feature-item {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         /* Testimonials Section */
-        .testimonial-section {
+        .testimonials {
+            background: #f7f8fc;
             padding: 80px 20px;
-            background-color: #f7f9fc;
         }
-        .testimonial-section h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: 700;
-        }
-        .testimonial {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            border-radius: 10px;
+        .testimonial-item {
             background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
         }
-        .testimonial img {
+        .testimonial-item img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid #00f2fe;
         }
-        .testimonial p {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #333;
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 20px;
+            background: #eef2f5;
         }
-        .testimonial:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 20px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            color: white;
+        }
+        .newsletter input {
+            margin-top: 20px;
+            padding: 10px 15px;
+            width: 50%;
+            max-width: 300px;
+            border: none;
+            border-radius: 30px;
+        }
+        .newsletter button {
+            padding: 10px 30px;
+            border-radius: 30px;
+            background: white;
+            color: #2575fc;
+            border: none;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        .newsletter button:hover {
+            background: #f9fafc;
+            color: #6a11cb;
         }
 
         /* Footer */
         footer {
-            background-color: #00f2fe;
+            background: #333;
             color: white;
-            padding: 30px 20px;
+            padding: 20px;
             text-align: center;
         }
         footer a {
-            color: #222;
+            color: #6a11cb;
             text-decoration: none;
-            font-weight: 600;
         }
-
-        /* Responsive Styles */
-        @media (max-width: 767px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            .templates h2 {
-                font-size: 2.2rem;
-            }
-            .value-section h3 {
-                font-size: 2.2rem;
-            }
-            .testimonial-section h2 {
-                font-size: 2.2rem;
-            }
-            .template-card h5 {
-                font-size: 1.1rem;
-            }
-        }
-
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
         <h1>SuperWebify</h1>
-        <p>Build your dream website effortlessly with our premium templates. Explore templates for your startup, business, or personal projects.</p>
-        <a href="#templates" class="btn btn-light me-3">Browse Templates</a>
-        <a href="#subscribe" class="btn btn-outline-light">Get Updates</a>
+        <p>Premium Website Templates for Entrepreneurs and Developers</p>
+        <a href="#features" class="btn btn-primary">Explore Features</a>
+        <a href="#pricing" class="btn btn-outline-light">View Pricing</a>
     </section>
 
-    <!-- Templates Section -->
-    <section id="templates" class="templates">
+    <!-- Features Section -->
+    <section id="features" class="features">
         <div class="container">
-            <h2>Explore Our Premium Templates</h2>
-            <div class="row g-4">
-                <div class="col-md-4 col-sm-12">
-                    <div class="card template-card">
-                        <img src="https://via.placeholder.com/300x200" alt="Template 1" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Startup Kit</h5>
-                            <p>Perfect for new businesses and entrepreneurs. Clean and modern design to make your brand stand out.</p>
-                        </div>
+            <h2>Features You'll Love</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <h5>Fast and Responsive</h5>
+                        <p>All templates are optimized for performance and mobile responsiveness.</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="card template-card">
-                        <img src="https://via.placeholder.com/300x200" alt="Template 2" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Creative Portfolio</h5>
-                            <p>Showcase your creativity with a beautifully designed portfolio. Perfect for designers, artists, and creatives.</p>
-                        </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <i class="fas fa-paint-brush fa-3x text-success mb-3"></i>
+                        <h5>Modern Designs</h5>
+                        <p>Crafted with modern aesthetics to help your website stand out.</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="card template-card">
-                        <img src="https://via.placeholder.com/300x200" alt="Template 3" class="card-img-top">
-                        <div class="card-body">
-                            <h5>E-Commerce Store</h5>
-                            <p>The ultimate design for online stores. Fully responsive with fast load times and modern user interfaces.</p>
-                        </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+                        <h5>Secure Templates</h5>
+                        <p>Built with the best practices in web security and compliance.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Value Section -->
-    <section class="value-section">
-        <h3>Why Choose SuperWebify?</h3>
-        <p>Our templates are fast, modern, and fully customizable to fit your needs. We focus on clean design, fast load times, and seamless user experience.</p>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonial-section">
+    <section id="testimonials" class="testimonials">
         <div class="container">
             <h2>What Our Users Say</h2>
-            <div class="row g-4">
-                <div class="col-md-4 col-sm-12">
-                    <div class="testimonial">
-                        <img src="https://via.placeholder.com/70" alt="User 1">
-                        <p>"SuperWebify saved us time and money. The templates are sleek and incredibly easy to customize!"</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-item">
+                        <img src="https://via.placeholder.com/80" alt="User 1">
+                        <p>"SuperWebify templates saved us so much time! Highly recommended."</p>
+                        <span>- John Doe</span>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="testimonial">
-                        <img src="https://via.placeholder.com/70" alt="User 2">
-                        <p>"The perfect platform for launching our startup. Beautiful designs and great customer support."</p>
+                <div class="col-md-4">
+                    <div class="testimonial-item">
+                        <img src="https://via.placeholder.com/80" alt="User 2">
+                        <p>"Amazing support and beautiful designs. Couldn't ask for more."</p>
+                        <span>- Jane Smith</span>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="testimonial">
-                        <img src="https://via.placeholder.com/70" alt="User 3">
-                        <p>"We switched to SuperWebify for our e-commerce store. The templates are fast, responsive, and beautiful."</p>
+                <div class="col-md-4">
+                    <div class="testimonial-item">
+                        <img src="https://via.placeholder.com/80" alt="User 3">
+                        <p>"The responsiveness of the templates is a game-changer for us."</p>
+                        <span>- Alice Brown</span>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container text-center">
+            <h2>Our Pricing Plans</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h5>Basic</h5>
+                        <p>$19/month</p>
+                        <ul>
+                            <li>1 Template</li>
+                            <li>Email Support</li>
+                        </ul>
+                        <button class="btn btn-primary">Choose Plan</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h5>Standard</h5>
+                        <p>$49/month</p>
+                        <ul>
+                            <li>10 Templates</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <button class="btn btn-primary">Choose Plan</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h5>Premium</h5>
+                        <p>$99/month</p>
+                        <ul>
+                            <li>Unlimited Templates</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <button class="btn btn-primary">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get the latest templates and offers directly to your inbox.</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 SuperWebify. Built with <a href="#">love</a>.</p>
+        <p>&copy; 2024 SuperWebify. All rights reserved. <a href="#privacy">Privacy Policy</a></p>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
