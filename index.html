@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperWebify - Elite Web Template Marketplace</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <!-- Fontawesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
+
     <!-- Custom Premium CSS -->
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --accent-color: #e74c3c;
-            --dark-bg: #121212;
-            --light-bg: #f4f6f9;
+            --primary-color: #6a11cb; /* Purple */
+            --secondary-color: #2575fc; /* Blue */
+            --accent-color: #e74c3c; /* Red */
+            --dark-bg: #121212; /* Dark Background */
+            --light-bg: #f4f6f9; /* Light Background */
+            --text-color: #333; /* Default Text Color */
+            --light-text-color: #f4f4f4; /* Light Mode Text Color */
         }
 
         * {
@@ -27,10 +32,34 @@
         }
 
         body {
-            font-family: 'Inter', 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--light-bg);
-            color: #333;
+            color: var(--text-color);
             line-height: 1.6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Glassmorphism Navbar */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* Premium Glassmorphism Effects */
@@ -51,6 +80,7 @@
             align-items: center;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
+            background-attachment: fixed;
         }
 
         .hero-content {
@@ -61,7 +91,7 @@
         /* Animated Background Shapes */
         .bg-shape {
             position: absolute;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             animation: float 6s infinite alternate;
         }
@@ -74,7 +104,7 @@
         /* Template Grid with Advanced Hover */
         .template-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -82,202 +112,108 @@
             position: relative;
             overflow: hidden;
             border-radius: 15px;
-            transition: all 0.4s ease-in-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .template-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .template-overlay {
             position: absolute;
             bottom: 0;
-            left: 0;
+            left : 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            overflow: hidden;
-            width: 100%;
-            height: 0;
-            transition: 0.5s ease;
+            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .template-card:hover .template-overlay {
-            height: 100%;
+            opacity: 1;
         }
 
-        /* Advanced Pricing Tiers */
-        .pricing-tier {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .pricing-tier:hover {
-            transform: translateY(-15px);
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
+        /* Footer Styles */
+        footer {
             background-color: var(--dark-bg);
-            color: #f4f4f4;
-        }
-
-        /* Responsive Typography */
-        @media (max-width: 768px) {
-            .hero-section {
-                min-height: 80vh;
-            }
+            color: var(--light-text-color);
+            padding: 20px 0;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-card">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">SuperWebify</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#templates">Templates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
                     <li class="nav-item">
-                        <button id="themeToggle" class="btn btn-outline-light">
-                            <i class="fas fa-adjust"></i> Theme
-                        </button>
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="btn btn-primary ms-2">Login</a>
+                        <a class="nav-link" href="#">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Animated Background -->
-    <header class="hero-section">
-        <!-- Animated Background Shapes -->
-        <div class="bg-shape" style="top: 10%; left: 10%; width: 200px; height: 200px;"></div>
-        <div class="bg-shape" style="bottom: 20%; right: 15%; width: 150px; height: 150px;"></div>
-
-        <div class="container hero-content text-center">
-            <h1 class="display-3 fw-bold mb-4">Transform Your Digital Presence</h1>
-            <p class="lead mb-5">Professional Website Templates for Innovators & Entrepreneurs</p>
-            <div class="d-flex justify-content-center">
-                <a href="#templates" class="btn btn-light btn-lg me-3">
-                    <i class="fas fa-swatchbook me-2"></i>Browse Templates
-                </a>
-                <a href="#" class="btn btn-success btn-lg">
-                    <i class="fas fa-rocket me-2"></i>Get Started
-                </a>
-            </div>
+    <section class="hero-section">
+        <div class="hero-content text-center">
+            <h1>Welcome to SuperWebify</h1>
+            <p>Your one-stop marketplace for elite web templates.</p>
+            <a href="#" class="btn btn-primary">Get Started</a>
         </div>
-    </header>
-
-    <!-- Featured Templates Section -->
-    <section id="templates" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Featured Templates</h2>
-            <div class="template-grid">
-                <!-- Template Cards with Advanced Hover -->
-                <div class="template-card position-relative">
-                    <img src="/api/placeholder/400/300" class="img-fluid" alt="Template">
-                    <div class="template-overlay d-flex flex-column justify-content-end p-3 text-white">
-                        <h4>Startup Landing</h4>
-                        <p>Modern Tech Startup Template</p>
-                        <div class="d-flex justify-content-between">
-                            <span class="badge bg-primary">Business</span>
-                            <a href="#" class="btn btn-sm btn-light">Preview</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for multiple templates -->
-            </div>
-        </div>
+        <div class="bg-shape" style="width: 200px; height: 200px; top: 20%; left: 10%;"></div>
+        <div class="bg-shape" style="width: 300px; height: 300px; top: 60%; right: 15%;"></div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Flexible Pricing</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="pricing-tier text-center">
-                        <h3>Starter</h3>
-                        <p class="h2 text-primary mb-4">$9.99</p>
-                        <ul class="list-unstyled">
-                            <li>3 Website Templates</li>
-                            <li>Basic Support</li>
-                            <li>Future Updates</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary mt-3">Choose Plan</a>
-                    </div>
+    <div class="container my-5">
+        <h2 class="text-center">Our Templates</h2>
+        <div class="template-grid">
+            <div class="template-card">
+                <img src="template1.jpg" alt="Template 1" class="img-fluid">
+                <div class="template-overlay">
+                    <h3>Template 1</h3>
+                    <p>Modern and responsive design.</p>
                 </div>
-                <!-- More pricing tiers -->
+            </div>
+            <div class="template-card">
+                <img src="template2.jpg" alt="Template 2" class="img-fluid">
+                <div class="template-overlay">
+                    <h3>Template 2</h3>
+                    <p>Elegant and professional layout.</p>
+                </div>
+            </div>
+            <div class="template-card">
+                <img src="template3.jpg" alt="Template 3" class="img-fluid">
+                <div class="template-overlay">
+                    <h3>Template 3</h3>
+                    <p>Creative and unique design.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Newsletter & CTA -->
-    <section class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h3>Stay Updated with Latest Templates</h3>
-                    <p>Get exclusive design insights and template previews</p>
-                </div>
-                <div class="col-md-6">
-                    <form id="newsletterForm" class="d-flex">
-                        <input type="email" class="form-control me-2" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <div class="social-links mb-3">
-                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <p>&copy; 2024 SuperWebify. All Rights Reserved.</p>
-        </div>
+    <footer>
+        <p>&copy; 2023 SuperWebify. All rights reserved.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Optional: Store user preference
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode);
-        });
-
-        // Check for previous theme preference
-        const savedTheme = localStorage.getItem('darkMode');
-        if (savedTheme === 'true') {
-            body.classList.add('dark-mode');
-        }
-
-        // Newsletter Subscription
-        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thanks for subscribing to SuperWebify!');
-        });
-    </script>
 </body>
 </html>
