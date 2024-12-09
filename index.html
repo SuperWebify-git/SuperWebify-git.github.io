@@ -3,217 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperWebify - Elite Web Template Marketplace</title>
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title>SuperWebify - Premium Website Templates</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- Fontawesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Custom Premium CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <style>
-        :root {
-            --primary-color: #6a11cb; /* Purple */
-            --secondary-color: #2575fc; /* Blue */
-            --accent-color: #e74c3c; /* Red */
-            --dark-bg: #121212; /* Dark Background */
-            --light-bg: #f4f6f9; /* Light Background */
-            --text-color: #333; /* Default Text Color */
-            --light-text-color: #f4f4f4; /* Light Mode Text Color */
-        }
-
-        * {
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
+        /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--light-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Glassmorphism Navbar */
-        .navbar {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Premium Glassmorphism Effects */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.125);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        }
-
-        /* Advanced Hero Section */
-        .hero-section {
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
             color: white;
-            background-attachment: fixed;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Animated Background Shapes */
-        .bg-shape {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s infinite alternate;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-30px); }
-        }
-
-        /* Template Grid with Advanced Hover */
-        .template-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .template-card {
+            text-align: center;
+            padding: 120px 20px;
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-
-        .template-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .template-overlay {
+        .hero::after {
+            content: '';
             position: absolute;
-            bottom: 0;
-            left : 0;
-            right: 0;
             top: 0;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/1500x800') center/cover no-repeat;
+            opacity: 0.1;
+        }
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin: 20px 0;
+        }
+        .hero .btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .hero .btn:hover {
+            transform: scale(1.05);
         }
 
-        .template-card:hover .template-overlay {
-            opacity: 1;
+        /* Templates Section */
+        .templates {
+            padding: 70px 20px;
+            background-color: #fff;
         }
-
-        /* Footer Styles */
-        footer {
-            background-color: var(--dark-bg);
-            color: var(--light-text-color);
-            padding: 20px 0;
+        .templates h2 {
             text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #222;
+            font-weight: 700;
+        }
+        .template-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .template-card:hover {
+            transform: translateY(-10px);
+        }
+        .template-card img {
+            border-bottom: 5px solid #00f2fe;
+        }
+        .template-card .card-body {
+            padding: 20px;
+        }
+        .template-card h5 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Value Section */
+        .value-section {
+            background: #121212;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .value-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .value-section p {
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials */
+        .testimonial-section {
+            padding: 70px 20px;
+            background-color: #f7f9fc;
+        }
+        .testimonial-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+        .testimonial {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            text-align: center;
+        }
+        .testimonial img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .testimonial p {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #00f2fe;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        footer a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">SuperWebify</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Templates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero-section">
-        <div class="hero-content text-center">
-            <h1>Welcome to SuperWebify</h1>
-            <p>Your one-stop marketplace for elite web templates.</p>
-            <a href="#" class="btn btn-primary">Get Started</a>
-        </div>
-        <div class="bg-shape" style="width: 200px; height: 200px; top: 20%; left: 10%;"></div>
-        <div class="bg-shape" style="width: 300px; height: 300px; top: 60%; right: 15%;"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>SuperWebify</h1>
+        <p>Build your dream website effortlessly with our premium templates.</p>
+        <a href="#templates" class="btn btn-light me-3">Browse Templates</a>
+        <a href="#subscribe" class="btn btn-outline-light">Get Updates</a>
     </section>
 
-    <div class="container my-5">
-        <h2 class="text-center">Our Templates</h2>
-        <div class="template-grid">
-            <div class="template-card">
-                <img src="template1.jpg" alt="Template 1" class="img-fluid">
-                <div class="template-overlay">
-                    <h3>Template 1</h3>
-                    <p>Modern and responsive design.</p>
+    <!-- Templates Section -->
+    <section id="templates" class="templates">
+        <div class="container">
+            <h2>Explore Our Premium Templates</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card template-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Template 1" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Startup Kit</h5>
+                            <p>Perfect for new businesses and entrepreneurs.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="template-card">
-                <img src="template2.jpg" alt="Template 2" class="img-fluid">
-                <div class="template-overlay">
-                    <h3>Template 2</h3>
-                    <p>Elegant and professional layout.</p>
+                <div class="col-md-4">
+                    <div class="card template-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Template 2" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Creative Portfolio</h5>
+                            <p>Showcase your creativity with style.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="template-card">
-                <img src="template3.jpg" alt="Template 3" class="img-fluid">
-                <div class="template-overlay">
-                    <h3>Template 3</h3>
-                    <p>Creative and unique design.</p>
+                <div class="col-md-4">
+                    <div class="card template-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Template 3" class="card-img-top">
+                        <div class="card-body">
+                            <h5>E-Commerce Store</h5>
+                            <p>The ultimate design for online businesses.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Value Section -->
+    <section class="value-section">
+        <h3>Why Choose SuperWebify?</h3>
+        <p>Our templates are fast, modern, and fully customizable to fit your needs.</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="https://via.placeholder.com/70" alt="User 1">
+                        <p>"SuperWebify saved us time and money. Highly recommend!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="https://via.placeholder.com/70" alt="User 2">
+                        <p>"Their templates are simply top-notch!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="https://via.placeholder.com/70" alt="User 3">
+                        <p>"Excellent service and beautiful designs."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 SuperWebify. All rights reserved.</p>
+        <p>&copy; 2024 SuperWebify. Built with <a href="#">love</a>.</p>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
