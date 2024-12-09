@@ -7,209 +7,241 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS for Premium Styling -->
     <style>
         /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f9fafc;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
             color: #333;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
             color: white;
-            padding: 100px 20px;
             text-align: center;
+            padding: 140px 20px;
             position: relative;
             overflow: hidden;
         }
-        .hero h1 {
-            font-size: 4rem;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/1500x800') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
         }
-        .hero h1 span {
-            display: block;
-            color: #00f2fe;
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-shadow: 2px 4px rgba(0, 0, 0, 0.2);
         }
         .hero p {
-            font-size: 1.3rem;
-            margin: 20px 0 30px;
-            line-height: 1.5;
+            font-size: 1.5rem;
+            margin: 20px 0;
+            text-shadow: 2px 4px rgba(0, 0, 0, 0.2);
         }
         .hero .btn {
-            padding: 12px 30px;
-            font-size: 1.1rem;
+            padding: 15px 40px;
+            font-size: 1.2rem;
             border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        .hero .btn-primary {
-            background-color: #00f2fe;
-            border: none;
-            color: #121212;
-        }
-        .hero .btn-primary:hover {
-            background-color: white;
-            transform: scale(1.1);
-        }
-        .hero .btn-outline-light:hover {
-            color: white;
+            border: 2px solid transparent;
             background-color: transparent;
-            border-color: white;
+            color: white;
+            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+        }
+        .hero .btn:hover {
+            transform: scale(1.1);
+            background-color: #00f2fe;
+            border-color: #00f2fe;
+            color: #121212;
         }
 
         /* Templates Section */
         .templates {
             padding: 80px 20px;
+            background-color: #fff;
+            position: relative;
         }
         .templates h2 {
             text-align: center;
+            font-size: 3rem;
             margin-bottom: 50px;
-            font-size: 2.5rem;
             color: #333;
+            font-weight: 700;
         }
         .template-card {
             border: none;
+            border-radius: 15px;
             overflow: hidden;
-            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         .template-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         .template-card img {
-            border-bottom: 5px solid #6a11cb;
+            border-bottom: 5px solid #00f2fe;
+            transition: transform 0.3s;
+        }
+        .template-card img:hover {
+            transform: scale(1.05);
         }
         .template-card .card-body {
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
         .template-card h5 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #333;
         }
         .template-card p {
             font-size: 1rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .template-card .btn {
-            font-size: 0.9rem;
-            background-color: #6a11cb;
-            border: none;
-            color: white;
-            transition: background-color 0.3s;
-        }
-        .template-card .btn:hover {
-            background-color: #2575fc;
+            color: #777;
         }
 
-        /* Testimonial Section */
+        /* Value Section */
+        .value-section {
+            background: #121212;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .value-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .value-section p {
+            font-size: 1.2rem;
+            color: #bbb;
+        }
+
+        /* Testimonials Section */
         .testimonial-section {
             padding: 80px 20px;
-            background: #f7f8fc;
+            background-color: #f7f9fc;
+        }
+        .testimonial-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
         }
         .testimonial {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            border-radius: 10px;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .testimonial img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             margin-bottom: 20px;
+            border: 3px solid #00f2fe;
         }
         .testimonial p {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
         }
-        .testimonial span {
-            display: block;
-            font-size: 0.9rem;
-            color: #888;
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
         }
 
         /* Footer */
         footer {
-            background: #6a11cb;
+            background-color: #00f2fe;
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
         footer a {
-            color: #00f2fe;
+            color: #222;
             text-decoration: none;
+            font-weight: 600;
         }
 
-        @media (max-width: 768px) {
+        /* Responsive Styles */
+        @media (max-width: 767px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             .hero p {
                 font-size: 1.1rem;
             }
             .templates h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            .value-section h3 {
+                font-size: 2.2rem;
+            }
+            .testimonial-section h2 {
+                font-size: 2.2rem;
+            }
+            .template-card h5 {
+                font-size: 1.1rem;
             }
         }
+
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <h1>SuperWebify <span>Your Premium Templates Marketplace</span></h1>
-        <p>Create stunning websites effortlessly with our premium and responsive templates.</p>
-        <a href="#templates" class="btn btn-primary me-2">Explore Now</a>
-        <a href="#subscribe" class="btn btn-outline-light">Subscribe</a>
+        <h1>SuperWebify</h1>
+        <p>Build your dream website effortlessly with our premium templates. Explore templates for your startup, business, or personal projects.</p>
+        <a href="#templates" class="btn btn-light me-3">Browse Templates</a>
+        <a href="#subscribe" class="btn btn-outline-light">Get Updates</a>
     </section>
 
     <!-- Templates Section -->
     <section id="templates" class="templates">
         <div class="container">
-            <h2>Our Featured Templates</h2>
+            <h2>Explore Our Premium Templates</h2>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="card template-card">
-                        <img src="https://via.placeholder.com/350x200" alt="Template 1" class="card-img-top">
+                        <img src="https://via.placeholder.com/300x200" alt="Template 1" class="card-img-top">
                         <div class="card-body">
                             <h5>Startup Kit</h5>
-                            <p>Perfect for entrepreneurs looking for sleek and modern designs.</p>
-                            <button class="btn">Learn More</button>
+                            <p>Perfect for new businesses and entrepreneurs. Clean and modern design to make your brand stand out.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="card template-card">
-                        <img src="https://via.placeholder.com/350x200" alt="Template 2" class="card-img-top">
+                        <img src="https://via.placeholder.com/300x200" alt="Template 2" class="card-img-top">
+                        <div class="card-body">
+                            <h5>Creative Portfolio</h5>
+                            <p>Showcase your creativity with a beautifully designed portfolio. Perfect for designers, artists, and creatives.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="card template-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Template 3" class="card-img-top">
                         <div class="card-body">
                             <h5>E-Commerce Store</h5>
-                            <p>A responsive design for setting up your online store quickly.</p>
-                            <button class="btn">Learn More</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card template-card">
-                        <img src="https://via.placeholder.com/350x200" alt="Template 3" class="card-img-top">
-                        <div class="card-body">
-                            <h5>Portfolio Template</h5>
-                            <p>Showcase your work with style and professionalism.</p>
-                            <button class="btn">Learn More</button>
+                            <p>The ultimate design for online stores. Fully responsive with fast load times and modern user interfaces.</p>
                         </div>
                     </div>
                 </div>
@@ -217,30 +249,33 @@
         </div>
     </section>
 
-    <!-- Testimonial Section -->
+    <!-- Value Section -->
+    <section class="value-section">
+        <h3>Why Choose SuperWebify?</h3>
+        <p>Our templates are fast, modern, and fully customizable to fit your needs. We focus on clean design, fast load times, and seamless user experience.</p>
+    </section>
+
+    <!-- Testimonials Section -->
     <section class="testimonial-section">
         <div class="container">
             <h2>What Our Users Say</h2>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="testimonial">
-                        <img src="https://via.placeholder.com/80" alt="User 1">
-                        <p>"SuperWebify's templates made my project easy and professional!"</p>
-                        <span>- John Doe</span>
+                        <img src="https://via.placeholder.com/70" alt="User 1">
+                        <p>"SuperWebify saved us time and money. The templates are sleek and incredibly easy to customize!"</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="testimonial">
-                        <img src="https://via.placeholder.com/80" alt="User 2">
-                        <p>"Amazing designs and great support from the team."</p>
-                        <span>- Sarah Lee</span>
+                        <img src="https://via.placeholder.com/70" alt="User 2">
+                        <p>"The perfect platform for launching our startup. Beautiful designs and great customer support."</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="testimonial">
-                        <img src="https://via.placeholder.com/80" alt="User 3">
-                        <p>"I built my portfolio in no time with these beautiful templates."</p>
-                        <span>- Alex Kim</span>
+                        <img src="https://via.placeholder.com/70" alt="User 3">
+                        <p>"We switched to SuperWebify for our e-commerce store. The templates are fast, responsive, and beautiful."</p>
                     </div>
                 </div>
             </div>
@@ -249,10 +284,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 SuperWebify. Built with love and passion. <a href="#privacy">Privacy Policy</a></p>
+        <p>&copy; 2024 SuperWebify. Built with <a href="#">love</a>.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
