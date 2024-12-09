@@ -13,144 +13,228 @@
     <!-- Custom CSS -->
     <style>
         /* Global Styles */
+        :root {
+            --primary-color: #6a11cb;
+            --secondary-color: #2575fc;
+            --accent-color: #f39c12;
+            --light-gray: #f8f9fa;
+            --dark-gray: #2d3436;
+            --border-radius: 15px;
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            margin: 0;
+            padding: 0;
             background-color: #f9fafc;
-            color: #333;
-            overflow-x: hidden;
         }
-        h1, h2, h3, h4 {
+
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Roboto', sans-serif;
-            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 120px 20px;
             text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
         }
+
         .hero h1 {
             font-size: 3.5rem;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
+
         .hero p {
-            font-size: 1.3rem;
-            margin-top: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
-        .hero .btn-primary {
-            margin: 20px 10px 0;
+
+        .hero .btn-primary, .hero .btn-outline-light {
             padding: 12px 30px;
+            font-size: 1rem;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
         .hero .btn-primary:hover {
-            background: white;
-            color: #2575fc;
+            background-color: white;
+            color: var(--primary-color);
             transform: scale(1.05);
+        }
+
+        .hero::before, .hero::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+            filter: blur(100px);
+        }
+
+        .hero::before {
+            top: -50px;
+            left: -50px;
+        }
+
+        .hero::after {
+            bottom: -50px;
+            right: -50px;
         }
 
         /* Features Section */
         .features {
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
+            background-color: var(--light-gray);
         }
+
         .features h2 {
+            font-size: 2.5rem;
             margin-bottom: 40px;
         }
+
         .feature-item {
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            margin: 20px 0;
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .feature-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
         }
 
         /* Testimonials Section */
         .testimonials {
-            background: #f7f8fc;
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: white;
             padding: 80px 20px;
+            text-align: center;
         }
+
         .testimonial-item {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 20px;
+            color: var(--dark-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
         }
+
         .testimonial-item img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
+            border: 3px solid var(--accent-color);
         }
 
         /* Pricing Section */
         .pricing {
+            background-color: var(--light-gray);
             padding: 80px 20px;
-            background: #eef2f5;
         }
+
+        .pricing h2 {
+            margin-bottom: 50px;
+        }
+
         .pricing-card {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             padding: 40px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s;
         }
+
         .pricing-card:hover {
-            transform: scale(1.05);
+            transform: translateY(-10px);
         }
 
-        /* FAQ Section */
-        .faq {
-            padding: 80px 20px;
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
         }
 
-        /* Newsletter */
+        .pricing-card ul li {
+            margin: 10px 0;
+        }
+
+        .pricing-card .btn {
+            border-radius: 30px;
+        }
+
+        /* Newsletter Section */
         .newsletter {
-            padding: 50px 20px;
-            text-align: center;
-            background: linear-gradient(to right, #2575fc, #6a11cb);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             color: white;
+            text-align: center;
+            padding: 60px 20px;
         }
+
         .newsletter input {
-            margin-top: 20px;
-            padding: 10px 15px;
-            width: 50%;
-            max-width: 300px;
-            border: none;
+            padding: 10px 20px;
             border-radius: 30px;
+            border: none;
+            margin-right: 10px;
+            width: 250px;
+            max-width: 100%;
         }
+
         .newsletter button {
-            padding: 10px 30px;
-            border-radius: 30px;
             background: white;
-            color: #2575fc;
+            color: var(--primary-color);
+            padding: 10px 30px;
             border: none;
-            margin-left: 10px;
-            transition: all 0.3s ease;
+            border-radius: 30px;
+            transition: all 0.3s;
         }
+
         .newsletter button:hover {
-            background: #f9fafc;
-            color: #6a11cb;
+            background: var(--light-gray);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background-color: var(--dark-gray);
             color: white;
             padding: 20px;
             text-align: center;
         }
+
         footer a {
-            color: #6a11cb;
-            text-decoration: none;
+            color: var(--accent-color);
         }
     </style>
 </head>
@@ -170,21 +254,21 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="feature-item">
-                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <i class="fas fa-rocket"></i>
                         <h5>Fast and Responsive</h5>
-                        <p>All templates are optimized for performance and mobile responsiveness.</p>
+                        <p>Optimized for performance and mobile responsiveness.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item">
-                        <i class="fas fa-paint-brush fa-3x text-success mb-3"></i>
+                        <i class="fas fa-paint-brush"></i>
                         <h5>Modern Designs</h5>
                         <p>Crafted with modern aesthetics to help your website stand out.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item">
-                        <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+                        <i class="fas fa-shield-alt"></i>
                         <h5>Secure Templates</h5>
                         <p>Built with the best practices in web security and compliance.</p>
                     </div>
