@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SuperWebify offers premium website templates for startups, businesses, and personal projects.">
-    <meta name="keywords" content="website templates, premium templates, web design, startup templates, business templates, portfolio templates, e-commerce templates">
-    <meta name="author" content="SuperWebify Team">
+    <meta name="keywords" content="website templates, premium templates, web design, startup templates, business templates, portfolio templates, e-commerce templates, responsive templates, customizable templates">
+    <meta name="author" content="SuperWebify Team, contact@superwebify.com">
+        
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SuperWebify - Premium Website Templates" />
+    <meta property="og:description" content="Explore premium website templates for startups, businesses, and personal projects." />
+    <meta property="og:image" content="URL_to_image" /> <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://www.superwebify.com" /> <!-- Replace with your website URL -->
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SuperWebify - Premium Website Templates" />
+    <meta name="twitter:description" content="Explore premium website templates for startups, businesses, and personal projects." />
+    <meta name="twitter:image" content="URL_to_image" /> <!-- Replace with actual image URL -->
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://www.superwebify.com" /> <!-- Replace with your website URL -->
+    
+    <!-- Robots Meta Tag -->
+    <meta name="robots" content="index, follow" />
     <title>SuperWebify - Premium Website Templates</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -37,50 +56,52 @@
             color: #ccc !important; /* Light gray on hover */
         }
 
-        /* Hero Section */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGhlcm98ZW58MHx8fHwxNjYyMjY0MjY0&ixlib=rb-1.2.1&q=80&w=1080') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 140px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-            z-index: 0;
-        }
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 800;
-            z-index: 1;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin: 20px 0;
-            z-index: 1;
-        }
-        .hero .btn {
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            border: 2px solid transparent;
-            background-color: transparent;
-            color: white;
-            transition: transform 0.3s, background-color 0.3s, color 0.3s;
-            z-index: 1;
-        }
-        .hero .btn:hover {
-            transform: scale(1.1);
-            background-color: #fff; /* White */
-            color: #000; /* Black */
-        }
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGhlcm98ZW58MHx8fHwxNjYyMjY0MjY0&ixlib=rb-1.2.1&q=80&w=1080') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 140px 20px;
+    position: relative;
+    overflow: hidden;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+}
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    z-index: 1;
+    color: #ffffff; /* Bright white */
+}
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    z-index: 1;
+    color: #ffffff; /* Bright white */
+}
+.hero .btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: 2px solid transparent; /* Remove black border */
+    background-color: transparent;
+    color: #ffffff; /* Bright white */
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    z-index: 1;
+}
+.hero .btn:hover {
+    transform: scale(1.1);
+    background-color: #ffffff; /* White */
+    color: #000; /* Black */
+}
 
         /* Templates Section */
         .templates {
@@ -460,7 +481,6 @@
         <p>&copy; 2024 SuperWebify. Built with <a href="#">love</a>.</p>
         <div>
             <a href="#">Privacy Policy</a> | 
-            <a ```html
             <a href="#">Terms of Service</a> | 
             <a href="#">Contact Us</a>
         </div>
